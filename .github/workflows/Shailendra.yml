@@ -3,9 +3,9 @@ on:
   push:
     branches: [ main ]
     jobs:
-  my-job:
-    runs-on: windows-latest
-    steps:
-    - name: Hello World
-      run: echo "Hello, world!"
+      my-job:
+        runs-on: windows-latest
+      steps:
+        - name: Hello World
+          run: echo "Hello, world!"
 
