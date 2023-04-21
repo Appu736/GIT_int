@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: action.yml/checkout@v2
       
       - name: Sync issue to Azure DevOps
         uses: ./sync-issue-to-ado
