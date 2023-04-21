@@ -1,0 +1,30 @@
+name: Sync issue to Azure DevOps work item
+
+on:
+  issues:
+    types:
+      [opened, edited, deleted, closed, reopened, labeled, unlabeled, assigned]
+  issue_comment:
+    types: [created, edited, deleted]
+
+jobs:
+  alert:
+    if: ${{ !github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Sync issue to Azure DevOps
+        uses: ./sync-issue-to-ado
+        env:
+          ADO_TOKEN: h2yihl3uaiugnk4uo7prqflzdxtgyxe7b4ykh2oxxqwogtcd7y6a
+          GITHUB_TOKEN: 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
+          ADO_ORGANIZATION: 'Kyndryl-Sandbox'
+          ADO_PROJECT: 'ADO TESTING'
+          ADO_WIT: 'User Story'
+          ADO_NEW_STATE: 'New'
+          ADO_ACTIVE_STATE: 'Active'
+          ADO_CLOSE_STATE: 'Closed'
+          ADO_BYPASSRULES: true
+          LOG_LEVEL: 100
