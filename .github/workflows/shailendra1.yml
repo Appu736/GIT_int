@@ -12,8 +12,7 @@ jobs:
     if: ${{ !github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: action.yml/checkout@v2
+      - uses: action/GIT_int@master
       
       - name: Sync issue to Azure DevOps
         uses: ./sync-issue-to-ado
