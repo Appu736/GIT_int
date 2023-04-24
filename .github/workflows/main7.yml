@@ -14,8 +14,8 @@ jobs:
     steps:
       - uses: danhellem/github-actions-issue-to-work-item@master
         env:
-          ado_token: jw5v5uqnzaxl3373w2kh2nvkgoog4f6zi6dzleomekpyq3dvjbzq
-          github_token: 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
+          ado_token: "${{ secrets.jw5v5uqnzaxl3373w2kh2nvkgoog4f6zi6dzleomekpyq3dvjbzq }}" 
+          github_token: "${{ secrets. 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 }}" 
           ado_organization: "eng18cs0252shailendrabilar"
           ado_project: "ADO-TESTING"
           ado_wit: "User Story"
